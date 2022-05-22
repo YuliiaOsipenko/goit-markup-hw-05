@@ -111,11 +111,27 @@ body {
     letter-spacing: 0.02em;
     text-decoration: none;
     display: block;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
    
 }
 .site-link:hover, .site-link:focus {
     color: var(--accent-color);
     text-decoration: none;
+    
+}
+.site-nav-acent{
+   
+    position: relative;
+}
+.site-nav-acent::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+    position: absolute;
+    top: 45px;
     
 }
 .site-link-acent {
@@ -127,6 +143,7 @@ body {
     letter-spacing: 0.02em;
     text-decoration: none;
     display: block;
+    
 }
 .contacts-header {
     color: #757575;
@@ -140,6 +157,7 @@ body {
     flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
           
 }
 .auth-nav {
@@ -214,9 +232,8 @@ body {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border: #2196F3;
     border-radius: 4px;
-    
-    
-}
+    }
+
 
 /* end hero*/
 /* start  about*/
@@ -300,8 +317,34 @@ body {
 }
   .portfolio-foto{
       margin-right: 30px;
+      position: relative;
       
   }
+  
+  .over-thumb{
+      position: absolute;
+      width: 370px;
+      height: 70px;
+      background-color: rgba(47, 48, 58, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: 0;
+      top:224px;
+    
+  }
+  .portfolio-text{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin:0;
+    color: var(--special-title-color);
+        }
 /* end portfolio*/
 /* start team*/
 .team {
@@ -390,7 +433,7 @@ body {
     width: 44px;
     height: 44px;
     border-radius:50%;
-    background-color: 
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 
@@ -402,6 +445,7 @@ body {
 }
 .social-list-icon {
     fill: #AFB1B8;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-list-link:hover .social-list-icon,
@@ -453,6 +497,7 @@ body {
     height: 100%;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover, .clients-link:focus {
     fill: var(--accent-color);
@@ -556,6 +601,7 @@ margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-list {
     display: flex;
@@ -621,12 +667,8 @@ margin-bottom: 20px;
     min-width: 73px;
     padding: 0px;
     padding: 6px 22px 6px 22px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
    
-    
-   
-    
-    
-    
 }
 .menu-button:hover, .menu-button:focus {
     color: var(--special-title-color);
@@ -698,10 +740,40 @@ margin-bottom: 20px;
 .projects-link {
     display: block;
     text-decoration: none;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 .projects-link:hover, .projects-link:focus{
   
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+.div-text-wrapper{
+    position:relative;
+    overflow: hidden;
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: rgba(33, 150, 243, 0.9);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.55;
+    letter-spacing: 0.03em;
+    color: var(--special-title-color);
+    top:0;
+    left:0;
+    margin:0;
+    padding: 63px 24px; 
+    overflow: auto;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+}
+.projects-link:hover .overlay,
+.projects-link:focus .overlay{
+    transform: translateY(0%);
 }
 
 /* end projects*/
